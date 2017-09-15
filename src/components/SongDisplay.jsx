@@ -40,7 +40,6 @@ SongDisplay.propTypes = {
 };
 
 const mapStateToProps = state => {
-  console.log(state);
   let info;
   const song = state.songsById[state.selectedSong];
   if (!state.songsById[state.selectedSong].isFetching) {
