@@ -16,7 +16,7 @@ class SongSearch extends React.Component {
     if (!_title.value.trim()) {
       return;
     }
-    this.props.dispatch(fetchSongId(_title.value.trim());
+    this.props.dispatch(fetchSongId(_title.value.trim()));
     _title.value = "";
   }
 
