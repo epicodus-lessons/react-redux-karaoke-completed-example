@@ -33,6 +33,17 @@ const songsById = (state = defaultState.songsById, action) => {
       return newState;
     default:
       return state;
+
+      case types.REQUEST_SONG:
+     newSong = {
+       isFetching: true,
+       title: action.title,
+       songId: action.songId
+     };
+     newState = Object.assign({}, state, {
+       [action.songId]: newSong
+     });
+     return newState;
   }
 };
 
