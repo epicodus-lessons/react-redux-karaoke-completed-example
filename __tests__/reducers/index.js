@@ -36,6 +36,22 @@ describe("Karaoke App", () => {
       .toEqual(newObject);
     });
 
+    it("update state on receive song", () => {
+      const action = actions.receiveSong("kiss", "prince", 1, ["you don't have to be beautiful", "to turn me on"]);
+      const newObject = {
+        isFetching: false,
+        title: action.title,
+        artist: action.artist,
+        songId: action.songId,
+        receivedAt: action.receivedAt,
+        songArray: action.songArray,
+        currentPhrase: action.songArray[0],
+        arrayPosition: 0
+      };
+      expect(songsById(defaultState.songsById, action)[action.songId])
+      .toEqual(newObject);
+    });
+
   });
 
   describe("Select Song Reducer", () => {
